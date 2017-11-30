@@ -46,5 +46,16 @@ class TicTacToe
      !position_taken?(index) && index.between?(0,8)
    end
 
+   def play(board)
+  while !over?(board)
+    turn(board)
+  end
+  if won?(board)
+    puts "Congratulations #{winner(board)}!"
+  elsif draw?(board)
+    puts "Cat's Game!"
+  end
+end
+
 
   end
